@@ -24,7 +24,7 @@ public class FieldFormer {
 //                    if (IsPossibility.vertical(field, a, b, Ship.FOUR_DECKER_VERT.getDesk())) {
 //                        continue;
 //                    }
-                    if (field[a][b] == 0) {
+                    if (field[a][b] == 0 && field[a + 1][b] == 0 && field[a + 2][b] == 0 && field[a + 3][b] == 0) {
                         for (int i = 0; i < Ship.FOUR_DECKER_VERT.getDesk(); i++) {
                             field[a + i][b] = 4;
                         }
@@ -37,7 +37,7 @@ public class FieldFormer {
 //                    if (IsPossibility.horizontal(field, a, b, Ship.FOUR_DECKER_HORIZONTAL.getDesk())) {
 //                        continue;
 //                    }
-                    if (field[aa][bb] == 0) {
+                    if (field[aa][bb] == 0 && field[aa][bb + 1] == 0 && field[aa][bb + 2] == 0 && field[aa][bb + 3] == 0) {
                         for (int i = 0; i < Ship.FOUR_DECKER_HORIZONTAL.getDesk(); i++) {
                             field[aa][bb + i] = 4;
                         }
@@ -51,7 +51,7 @@ public class FieldFormer {
                 case THREE_DECKER_VERT:
                     int a = random.nextInt(0, length - Ship.THREE_DECKER_VERT.getDesk());
                     int b = random.nextInt(0, width);
-                    if (field[a][b] == 0) {
+                    if (field[a][b] == 0 && field[a + 1][b] == 0 && field[a + 2][b] == 0) {
                         for (int i = 0; i < Ship.THREE_DECKER_VERT.getDesk(); i++) {
                             field[a + i][b] = 3;
                         }
@@ -61,7 +61,7 @@ public class FieldFormer {
                 case THREE_DECKER_HORIZONTAL:
                     int aa = random.nextInt(0, length);
                     int bb = random.nextInt(0, width - Ship.THREE_DECKER_HORIZONTAL.getDesk());
-                    if (field[aa][bb] == 0) {
+                    if (field[aa][bb] == 0 && field[aa][bb + 1] == 0 && field[aa][bb + 2] == 0) {
                         for (int i = 0; i < Ship.THREE_DECKER_HORIZONTAL.getDesk(); i++) {
                             field[aa][bb + i] = 3;
                         }
@@ -75,7 +75,7 @@ public class FieldFormer {
                 case TWO_DECKER_VERT:
                     int a = random.nextInt(0, length - Ship.TWO_DECKER_VERT.getDesk());
                     int b = random.nextInt(0, width);
-                    if (field[a][b] == 0) {
+                    if (field[a][b] == 0 && field[a + 1][b] == 0) {
                         for (int i = 0; i < Ship.TWO_DECKER_VERT.getDesk(); i++) {
                             field[a + i][b] = 2;
                         }
@@ -85,7 +85,7 @@ public class FieldFormer {
                 case TWO_DECKER_HORIZONTAL:
                     int aa = random.nextInt(0, length);
                     int bb = random.nextInt(0, width - Ship.TWO_DECKER_HORIZONTAL.getDesk());
-                    if (field[aa][bb] == 0) {
+                    if (field[aa][bb] == 0 && field[aa][bb + 1] == 0) {
                         for (int i = 0; i < Ship.TWO_DECKER_HORIZONTAL.getDesk(); i++) {
                             field[aa][bb + i] = 2;
                         }
